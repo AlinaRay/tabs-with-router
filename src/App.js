@@ -1,25 +1,33 @@
 import React from 'react';
+import {
+  Switch, Route, HashRouter, NavLink,
+} from 'react-router-dom';
+
 import './App.css';
+import HomePage from './components/HomePage';
+import TabsPage from './components/TabsPage';
 
-class App extends React.Component {
-  state = {
-    tabs: [
-      { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
-      { id: 'tab-2', title: 'Tab 2', content: 'Some text 2' },
-      { id: 'tab-3', title: 'Tab 3', content: 'Some text 3' },
-    ],
-  };
-
-  render() {
-    const { tabs } = this.state;
-
-    return (
-      <div className="App">
-        {/* eslint-disable-next-line */}
-        <h1>{tabs.length} tabs</h1>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <HashRouter>
+      <header>
+        <nav className="nav-list">
+          <ul>
+            <li>
+              <NavLink to="/">Go to home page</NavLink>
+            </li>
+            <li>
+              <NavLink to="/tabspage">Go to tabs page</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/tabspage" component={TabsPage} />
+      </Switch>
+    </HashRouter>
+  </div>
+);
 
 export default App;
