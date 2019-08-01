@@ -14,7 +14,7 @@ const App = () => (
         <nav className="nav-list">
           <ul>
             <li>
-              <NavLink to="/">Go to home page</NavLink>
+              <NavLink exact to="/">Go to home page</NavLink>
             </li>
             <li>
               <NavLink to="/tabspage">Go to tabs page</NavLink>

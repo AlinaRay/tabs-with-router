@@ -10,7 +10,6 @@ const TabsPage = () => (
     <main>
       <Tabs
         tabs={tabsList}
-        current="tab-2"
       />
     </main>
   </div>
